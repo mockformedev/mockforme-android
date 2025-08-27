@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -6,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.mfm.mockforme"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.mfm.mockforme"
@@ -16,6 +18,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val localProperties = Properties().apply {
+            load(rootProject.file("local.properties").inputStream())
+        }
+
+        val token: String = localProperties.getProperty("MFM_TOKEN") ?: ""
+        buildConfigField("String", "MOCKFORME_TOKEN", "\"$token\"")
     }
 
     buildTypes {
@@ -35,6 +44,7 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }
@@ -49,6 +59,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.okhttp)
+    implementation(libs.coroutines)
+    implementation(libs.mockforme.android)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
