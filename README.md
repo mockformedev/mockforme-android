@@ -3,6 +3,11 @@ This repository provides a working Android example demonstrating how to integrat
 
 This project shows the complete setup to integrate **MockForMe** with **OkHttp** in an Android application, enabling **mock API responses**, **frontend API testing**, and **rapid prototyping**.
 
+📄 Commit Example – See the required changes to integrate MockForMe in Android:  
+https://github.com/mockformedev/mockforme-android/commit/78701e5a8e346773eec93efe84f518f1104ad936
+
+🎥 Video Guide – Learn how to create a mock API in the MockForMe Dashboard:  
+https://www.youtube.com/watch?v=V1_leclmpTw
 
 > **Note:**  
 > This example uses **OkHttp** and **kotlinx-coroutines** to demonstrate how to mock APIs with **MockForMe**.
@@ -108,8 +113,8 @@ Create a new file:
 2. Sign up or sign in with your Google account
 3. Create a **Collection** (e.g., User)
 4. Inside the collection, create an **API**:
-   * Endpoint: `/user/me`
-   * Method: `GET`
+    * Endpoint: `/user/me`
+    * Method: `GET`
 5. Enable the **Enable Mocking** switch
 6. Add the desired **API responses**
 
@@ -128,9 +133,22 @@ Create a new file:
 ## 🔒 Security & Privacy
 MockForMe is designed with developer trust and data safety in mind.
 
-- ✅ We **only intercept API requests** that you have explicitly enabled in the **MockForMe Dashboard**.
-- ✅ We **do not access, store, or transmit any customer data** from your application.
-- ✅ The library **only modifies the request path and attaches the MockForMe token** in order to return the configured mock response.
+✅ We **only intercept API requests** that you have explicitly enabled in the **MockForMe Dashboard**.  
+✅ We **do not access, store, or transmit any customer data** from your application.  
+✅ The library **only modifies the request path and attaches the MockForMe token** in order to return the configured mock response.
+
+<hr />
+
+- Website: https://www.mockforme.com
+- Dashboard: https://dashboard.mockforme.com
+- Documentation: https://docs.mockforme.com
+- YouTube: https://www.youtube.com/@mockforme
+- GitHub: https://github.com/mockformedev
 
 
 **Keywords:** mockforme, mockforme-android, android api mocking, okhttp mock api, android api testing, android mock api example, api mocking android
+
+**Example Screenshot:**  
+<p align="center">
+  <img src="https://ik.imagekit.io/mfm/static-collection/mockforme-android-example-view.jpg" alt="MockForMe Android Example" width="400"/>
+</p>

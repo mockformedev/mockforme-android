@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
             MockformeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Mockforme Android Example",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -66,14 +66,15 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     Column (
         modifier = Modifier
             .fillMaxWidth()
-            .fillMaxHeight(),
-        verticalArrangement = Arrangement.spacedBy(10.dp)
+            .fillMaxHeight()
+            .padding(top = 100.dp),
+        verticalArrangement = Arrangement.spacedBy(40.dp)
 
     ) {
         Row (
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier
-                .padding(top = 10.dp, end = 50.dp, bottom = 0.dp, start = 50.dp),
+                .padding(top = 0.dp, end = 50.dp, bottom = 0.dp, start = 50.dp),
         ) {
             Text(
                 text = "$name!"
