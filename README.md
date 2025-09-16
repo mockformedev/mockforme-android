@@ -91,6 +91,7 @@ In your `app/build.gradle.kts`, load the token from `local.properties` and defin
 
 Create a new file:  
 `app/src/main/java/com/mfm/mockforme/Network.java`
+
 https://github.com/mockformedev/mockforme-android/blob/master/app/src/main/java/com/mfm/mockforme/Network.java
 
 > The `Network` class provides a singleton `OkHttpClient` instance that is shared across the entire application.
@@ -100,6 +101,8 @@ https://github.com/mockformedev/mockforme-android/blob/master/app/src/main/java/
 
 
 ### Step 7: Configure `app/src/main/java/com/mfm/mockforme/MainActivity.java`
+
+https://github.com/mockformedev/mockforme-android/blob/master/app/src/main/java/com/mfm/mockforme/MainActivity.kt
 
 - When the app launches, `MockForMe(BuildConfig.MOCKFORME_TOKEN).run(...)` fetches the available mock API mappings.
 - The **"Get User Info"** button triggers a network request to `https://api.example.com/user/me`.
