@@ -91,6 +91,7 @@ In your `app/build.gradle.kts`, load the token from `local.properties` and defin
 
 Create a new file:  
 `app/src/main/java/com/mfm/mockforme/Network.java`
+https://github.com/mockformedev/mockforme-android/blob/master/app/src/main/java/com/mfm/mockforme/Network.java
 
 > The `Network` class provides a singleton `OkHttpClient` instance that is shared across the entire application.
 
