@@ -47,21 +47,25 @@ class MainActivity : ComponentActivity() {
         setContent {
             MockformeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
 
                     Column(
                         modifier = Modifier.fillMaxSize(),
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
+                        Greeting(
+                            modifier = Modifier.padding(innerPadding)
+                        )
+
                         Button(
                             onClick = {
                                 lifecycleScope.launch {
-                                    val users: List<User> = userService.getUsers()
-                                    Log.d("Users", users.toString())
+                                    try {
+                                        val users: List<User> = userService.getUsers()
+                                        Log.d("Users", users.toString())
+                                    } catch (e: Exception) {
+                                        Log.d("Exception", e.toString())
+                                    }
                                 }
                             }
                         ) {
@@ -78,10 +82,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = "Mockforme",
+        modifier = modifier,
+        fontSize = 40.sp
     )
 }
 
@@ -89,6 +94,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     MockformeTheme {
-        Greeting("Android")
+        Greeting()
     }
 }
